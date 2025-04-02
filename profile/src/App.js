@@ -55,7 +55,7 @@ const App = () => {
     {
       title: "Premium Quality Assurance",
       description:
-        "Every fruit meets our rigorous quality standards, ensuring freshness, taste, and nutritional value in every bite.",
+        "Every Mango meets our rigorous quality standards, ensuring freshness, taste, and nutritional value in every bite.",
       icon: Check,
     },
     {
@@ -67,7 +67,7 @@ const App = () => {
     {
       title: "Competitive Pricing",
       description:
-        "Best value without compromising quality, offering farm-fresh fruits at affordable rates for everyone.",
+        "Best value without compromising quality, offering farm-fresh Mangoes at affordable rates for everyone.",
       icon: Check,
     },
     {
@@ -202,13 +202,13 @@ const App = () => {
       color: "darkGreen2",
     },
     {
-      number: "50,000+",
+      number: "1,00,000+",
       label: "Happy Customers",
       icon: "🌿",
       color: "green3",
     },
     {
-      number: "100+",
+      number: "50+",
       label: "Varieties",
       icon: "🍃",
       color: "green4",

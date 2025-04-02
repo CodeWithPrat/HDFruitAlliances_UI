@@ -322,10 +322,12 @@ const MangoCarousel = () => {
                           <p className="text-xl font-bold text-orange-700">₹{mango.price10kg}</p>
                         </div>
                       </div>
+                      <a href='#contact'>
                       <button className="bg-yellow-600 hover:bg-orange-700 text-white font-medium py-2 px-4 rounded-lg w-full flex items-center justify-center gap-2 transition-colors duration-300">
                         <ShoppingCart size={18} />
                         Order Now
                       </button>
+                      </a>
                     </div>
                   </div>
                 </div>

@@ -8,7 +8,10 @@ const LocationSection = () => {
     phoneNumber: '',
     email: '',
     enquiryType: '',
-    comments: ''
+    preferredLocation: '',
+    comments: '',
+    mangoTypes: [],
+    mangoQuantity: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({
@@ -19,6 +22,14 @@ const LocationSection = () => {
   
   // Add state to track which location's map to display
   const [selectedLocation, setSelectedLocation] = useState(0);
+
+  // Mango types data
+  const mangoTypes = [
+    "Alphonso Mango", "Banganapalli Mango", "Sindhura Mango", 
+    "Mallika Mango", "Sugar Beans Mango", "Malgova Mango", 
+    "Raspuri Mango", "Kesar Mango", "Imampasand Mango", 
+    "Kalapad Mango", "Daseri Mango"
+  ];
 
   // Locations data array
   const locations = [
@@ -69,19 +80,45 @@ const LocationSection = () => {
     }));
   };
 
+  // Handle checkbox change for mango types
+  const handleMangoTypeChange = (type) => {
+    setFormData(prev => {
+      const updatedMangoTypes = [...prev.mangoTypes];
+      if (updatedMangoTypes.includes(type)) {
+        // Remove if already selected
+        return {
+          ...prev,
+          mangoTypes: updatedMangoTypes.filter(item => item !== type)
+        };
+      } else {
+        // Add if not selected
+        return {
+          ...prev,
+          mangoTypes: [...updatedMangoTypes, type]
+        };
+      }
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // Create the data to be sent, formatting mango types as a string if needed
+    const dataToSend = {
+      ...formData,
+      mangoTypes: formData.mangoTypes.join(', ') // Convert array to comma-separated string
+    };
+    
     // Your Google Apps Script Web App URL
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwpcMYHKFc0D4lAR-nSH98k2HUWOzZ4VEiMscHdXLLM3MlU5f3q0DcweO0jHVfHfLUoQg/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxDp8WxAJMpV_ydRt5_rOEQc5GXrxeVhcZ5XHt6MC2GYs6nDSy8FDBr0kcrlak6yLOxcw/exec';
     
     try {
       // Try both approaches - first with regular fetch
       try {
         const response = await fetch(scriptURL, {
           method: 'POST',
-          body: JSON.stringify(formData),
+          body: JSON.stringify(dataToSend), // Send the modified data
           headers: {
             'Content-Type': 'application/json'
           }
@@ -98,7 +135,7 @@ const LocationSection = () => {
       // If regular fetch fails, try with no-cors mode
       fetch(scriptURL, {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: JSON.stringify(dataToSend), // Send the modified data
         headers: {
           'Content-Type': 'application/json'
         },
@@ -134,7 +171,10 @@ const LocationSection = () => {
       email: '',
       phoneNumber: '',
       enquiryType: '',
-      comments: ''
+      preferredLocation: '',
+      comments: '',
+      mangoTypes: [],
+      mangoQuantity: ''
     });
     
     setIsSubmitting(false);
@@ -275,12 +315,58 @@ const LocationSection = () => {
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green3 focus:border-transparent"
                     >
                       <option value="">Select an option</option>
+                      <option value="Order">Order</option>
                       <option value="Sales">Sales</option>
                       <option value="Support">Support</option>
                       <option value="Partnership">Partnership</option>
                       <option value="Other">Other</option>
                     </select>
                   </div>
+                  
+                  {/* Conditional fields for Order type */}
+                  {formData.enquiryType === 'Order' && (
+                    <>
+                      <div>
+                        <label className="block font-tinos text-gray-700 mb-2">
+                          Type of Mango to Order <span className="text-red-500">*</span>
+                        </label>
+                        <div className="max-h-48 overflow-y-auto p-3 border border-gray-300 rounded-lg">
+                          {mangoTypes.map((type) => (
+                            <div key={type} className="flex items-center mb-2">
+                              <input
+                                type="checkbox"
+                                id={`mango-${type}`}
+                                checked={formData.mangoTypes.includes(type)}
+                                onChange={() => handleMangoTypeChange(type)}
+                                className="mr-2 h-4 w-4 text-green3 focus:ring-green3 border-gray-300 rounded"
+                              />
+                              <label htmlFor={`mango-${type}`} className="font-tinos text-gray-700">
+                                {type}
+                              </label>
+                            </div>
+                          ))}
+                        </div>
+                        {formData.mangoTypes.length === 0 && formData.enquiryType === 'Order' && (
+                          <p className="text-sm text-red-500 mt-1">Please select at least one type of mango</p>
+                        )}
+                      </div>
+                      
+                      <div>
+                        <label className="block font-tinos text-gray-700 mb-2">
+                          Quantity (Kg) <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="number"
+                          name="mangoQuantity"
+                          value={formData.mangoQuantity}
+                          onChange={handleInputChange}
+                          min="1"
+                          required={formData.enquiryType === 'Order'}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green3 focus:border-transparent"
+                        />
+                      </div>
+                    </>
+                  )}
                   
                   {/* Add location selection to form */}
                   <div>
@@ -314,7 +400,7 @@ const LocationSection = () => {
 
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || (formData.enquiryType === 'Order' && (formData.mangoTypes.length === 0 || !formData.mangoQuantity))}
                     className="w-full bg-green3 text-white py-3 rounded-lg hover:bg-green4 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed font-tinos font-bold"
                   >
                     {isSubmitting ? 'Submitting...' : 'Submit'}

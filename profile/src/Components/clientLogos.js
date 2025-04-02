@@ -69,9 +69,11 @@ const OurClients = () => {
           <p className="text-gray-600 font-tinos">
             Join our growing network of premium retail partners
           </p>
+          <a href='#contact'>
           <button className="mt-4 px-6 py-3 bg-green-700 hover:bg-green-800 text-white font-medium rounded-lg transition-colors duration-300">
             Become a Partner
           </button>
+          </a>
         </div>
       </div>
     </section>

@@ -61,7 +61,7 @@ const MessageCards = () => {
                         <div className="h-px bg-gradient-to-r from-transparent via-green-200 to-transparent my-3" />
                         <div className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-green-200 scrollbar-track-transparent pr-2">
                             <p className="font-garamond text-base text-gray-700 leading-relaxed mb-3">
-                                It is with immense gratitude and pride that I address you as the Founder of HD Fruit Alliances. Our journey in the fruit industry spans four generations, built on a foundation of trust, quality, and an unwavering commitment to excellence.
+                                It is with immense gratitude and pride that I address you as the Founder of Fresh Mango Matrix' a unit of HD Fruit Alliances. Our journey in the fruit industry spans four generations, built on a foundation of trust, quality, and an unwavering commitment to excellence.
                             </p>
                             <p className="font-garamond text-base text-gray-700 leading-relaxed">
                                 This legacy is not just a business for us—it is a responsibility that we uphold with sincerity and dedication.
@@ -92,7 +92,7 @@ const MessageCards = () => {
                         <div className="h-px bg-gradient-to-r from-transparent via-green-200 to-transparent my-3" />
                         <div className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-green-200 scrollbar-track-transparent pr-2">
                             <p className="font-garamond text-base text-gray-700 leading-relaxed mb-3">
-                                At HD Fruit Alliances, our mission is simple yet profound—to deliver the finest fruits with the highest standards of freshness, nutrition, and quality.
+                                At Fresh Mango Matrix' a unit of HD Fruit Alliances, our mission is simple yet profound—to deliver the finest fruits with the highest standards of freshness, nutrition, and quality.
                             </p>
                             <p className="font-garamond text-base text-gray-700 leading-relaxed">
                                 As we move forward, our vision is not only to provide premium fruits but also to create meaningful business opportunities.
@@ -124,7 +124,7 @@ const MessageCards = () => {
                         <div className="h-px bg-gradient-to-r from-transparent via-green-200 to-transparent my-3" />
                         <div className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-green-200 scrollbar-track-transparent pr-2">
                             <p className="font-garamond text-base text-gray-700 leading-relaxed mb-3">
-                                At HD Fruit Alliances, our commitment to quality and sustainability drives everything we do. We take pride in delivering the freshest and finest fruits, sourced responsibly and with care.
+                                At Fresh Mango Matrix, our commitment to quality and sustainability drives everything we do. We take pride in delivering the freshest and finest fruits, sourced responsibly and with care.
                             </p>
                             <p className="font-garamond text-base text-gray-700 leading-relaxed">
                                 Our journey is rooted in tradition yet embraces innovation, ensuring that every customer experiences the best nature has to offer.

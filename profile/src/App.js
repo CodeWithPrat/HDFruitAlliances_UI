@@ -35,6 +35,8 @@ import LocationSection from "./Components/LocationSection";
 import MessageCards from "./Components/MessageCards";
 import MangoCategories from "./Components/MangoCategories";
 import ContactForm from "./Components/ContactForm";
+import MangoCarousel from "./Components/MangoCarousel";
+import OurClients from "./Components/clientLogos";
 
 import HDFAlogo from "./Images/MangoProject/hfa.png";
 import hfa_footer from "./Images/MangoProject/hfa_footer.jpg";
@@ -212,7 +214,7 @@ const App = () => {
       color: "green4",
     },
     {
-      number: "24/7",
+      number: "April - July",
       label: "Support",
       icon: "🌳",
       color: "green5",
@@ -344,7 +346,7 @@ const App = () => {
   return (
     <div
       className="min-h-screen bg-gradient-to-b from-green6/10 to-yellow1/10"
-      onTouchStart={handleTouchStart}
+      // onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
@@ -352,22 +354,17 @@ const App = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
+            {/* Logo (Left Side) */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center"
             >
-              <img
-                src={HDFAlogo}
-                alt="HD Fruit Alliances Logo"
-                className="h-16"
-              />
-
+              <img src={fmm_footer} alt="fresh mango matrix" className="h-16" />
             </motion.div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            {/* Desktop Navigation + Second Logo (Right Side) */}
+            <div className="hidden md:flex items-center space-x-6">
               {navLinks.map((link) => (
                 <motion.a
                   key={link.title}
@@ -379,6 +376,7 @@ const App = () => {
                   {link.title}
                 </motion.a>
               ))}
+
               <motion.a
                 href="tel:+918151881796"
                 className="flex items-center px-4 py-2 bg-green3 text-white rounded-full hover:bg-green4 transition-colors"
@@ -395,6 +393,14 @@ const App = () => {
               >
                 <MessageCircle size={18} className="mr-2" /> WhatsApp
               </motion.a>
+
+              {/* Second Logo (Top Right) */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+              >
+                <img src={HDFAlogo} alt="HD Fruit Alliances Logo" className="h-12" />
+              </motion.div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -408,6 +414,7 @@ const App = () => {
           </div>
         </div>
       </nav>
+
 
       {/* Mobile Navigation */}
       <AnimatePresence>
@@ -543,11 +550,11 @@ const App = () => {
                       transition={{ duration: 0.6 }}
                     >
                       <motion.h2
-                        className="font-tangerine text-4xl md:text-6xl lg:text-7xl bg-gradient-to-r from-green-700 to-green-500 bg-clip-text text-transparent mb-4"
+                        className="font-garamond text-4xl md:text-4xl lg:text-6xl bg-gradient-to-r from-green-700 to-green-500 bg-clip-text text-transparent mb-4"
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
-                        Welcome to HD Fruit Alliances
+                        Welcome to Fresh Mango Matrix, a unit of HD Fruit Alliances
                       </motion.h2>
 
                       <motion.div
@@ -568,7 +575,7 @@ const App = () => {
                       >
                         <h3 className="font-garamond text-2xl text-green-700 mb-4">Our Legacy</h3>
                         <p className="text-neutral-600 font-tinos">
-                          Founded by Beerappanahalli Narasimha Gowda and now led by Mr. Hari Krishna D,
+                          Founded by Beerappanahalli Narasimha Gowda carried by Beerappanahalli Dyavappa and now led by Mr. Hari Krishna D,
                           we carry forward a four-generation legacy of excellence in fruit distribution.
                         </p>
                       </motion.div>
@@ -580,12 +587,12 @@ const App = () => {
                       >
                         <h3 className="font-garamond text-2xl text-green-700 mb-4">Our Mission</h3>
                         <p className="text-neutral-600 font-tinos">
-                        At HD Fruit Alliance, our mission is simple yet powerful: to delight customers with the most pristine, 
-                        highest-quality fruits. From orchard to doorstep, we’re dedicated to supplying you with the finest selection
-                        of fruits, ensuring every bite is a burst of flavor and nutrition. Experience the difference with HD Fruit
-                        Alliance – where quality meets satisfaction, one juicy bite at a time. Along with this our aim to transform 
-                        corporate wellness with our diverse range of fresh fruits, delivered nationwide for a healthier, happier 
-                        workplace. Experience the vibrant taste of health in every office, every day!
+                          At Fresh Mango Matrix' a unit of HD Fruit Alliances, our mission is simple yet powerful: to delight customers with the most pristine,
+                          highest-quality Mangoes. From orchard to doorstep, we’re dedicated to supplying you with the finest selection
+                          of Mangoes, ensuring every bite is a burst of flavor and nutrition. Experience the difference with Fresh Mango Matrix
+                          – where quality meets satisfaction, one juicy bite at a time. Along with this our aim to transform
+                          corporate wellness with our diverse range of fresh Mangoes, delivered nationwide for a healthier, happier
+                          workplace. Experience the vibrant taste of health in every office, every day!
                         </p>
                       </motion.div>
 
@@ -596,10 +603,10 @@ const App = () => {
                       >
                         <h3 className="font-garamond text-2xl text-green-700 mb-4">Our vision</h3>
                         <p className="text-neutral-600 font-tinos">
-                        HD Fruit Alliance envisions a future where our premium fruits are enjoyed in every 
-                        corner of India. From Pan India to nationwide, our goal is to spread the joy of freshness 
-                        and quality to every household, ensuring that everyone has access to the finest fruits for 
-                        a healthier, happier lifestyle.
+                          Fresh Mango Matrix envisions a future where our premium Mangoes are enjoyed in every
+                          corner of India. From Pan India to nationwide, our goal is to spread the joy of freshness
+                          and quality to every household, ensuring that everyone has access to the finest Mangoes for
+                          a healthier, happier lifestyle.
                         </p>
                       </motion.div>
                     </div>
@@ -607,7 +614,7 @@ const App = () => {
 
                   {/* Right Column - Brand Ambassador Image */}
                   <motion.div
-                    className="order-1 lg:order-2 flex justify-center lg:justify-end"
+                    className="order-1 lg:order-2 flex justify-center lg:justify-end mt-[-100px] sm:mt-[-20px] md:mt-[-20px]"
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -626,6 +633,7 @@ const App = () => {
                       <div className="absolute -top-4 -left-4 w-32 h-32 bg-amber-100 rounded-full opacity-50 z-0" />
                     </div>
                   </motion.div>
+
                 </div>
               </div>
             </div>
@@ -677,7 +685,7 @@ const App = () => {
         </section>
 
         <section id="mango-categories">
-          <MangoCategories />
+          <MangoCarousel />
         </section>
 
         {/* Stats Section */}
@@ -928,7 +936,7 @@ const App = () => {
                 style={{ y: textY }}
                 className="font-tangerine text-5xl md:text-7xl text-darkGreen2 mb-4"
               >
-                Why HD Fruit Alliances?
+                Why Fresh Mango Matrix?
               </motion.h2>
               <div className="w-24 h-1 bg-green3 mx-auto rounded-full" />
             </motion.div>
@@ -980,6 +988,10 @@ const App = () => {
           <MessageCards />
         </section>
 
+        <section id="clients">
+          <OurClients />
+        </section>
+
         {/* Testimonials Section */}
         <div id="testimonials">
           <TestimonialsSection />
@@ -990,7 +1002,7 @@ const App = () => {
           <EnhancedDealsSection />
         </section>
 
-        
+
 
         <section>
           <LocationSection />
@@ -1007,28 +1019,28 @@ const App = () => {
       {/* Footer */}
       <footer className="w-full bg-gradient-to-br from-emerald-800 to-emerald-950 text-white pt-10">
         <div className="w-full max-w-8xl mx-auto px-6 lg:px-8 pb-12 ">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 p-6">
             {/* Company Info */}
-            <div className="bg-white/5  rounded-2xl p-6 shadow-xl border border-white/10">
-              <div className="flex flex-col items-center space-y-4">
-                <div className="flex items-center justify-between gap-4">
-                  <img
+            {/* <div className="bg-white/5  rounded-2xl p-6 shadow-xl border border-white/10"> */}
+            <div className="flex flex-col items-center space-y-4">
+              <div className="flex items-center justify-between gap-4">
+                {/* <img
                     src={hfa_footer}
                     alt="HD Fruit Alliances Logo"
                     className="h-10 w-auto hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="h-12 w-px bg-emerald-400/20" />
-                  <img
-                    src={fmm_footer}
-                    alt="Fresh Nature Mangoes Logo"
-                    className="h-14 w-auto hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <p className="font-light text-sm text-emerald-100/90 text-center italic border-t border-emerald-400/20 pt-4">
-                Delivering fresh, high-quality mangoes to your doorstep with utmost care and excellence
-                </p>
+                  <div className="h-12 w-px bg-emerald-400/20" /> */}
+                <img
+                  src={fmm_footer}
+                  alt="Fresh Nature Mangoes Logo"
+                  className="h-14 w-auto hover:scale-105 transition-transform duration-300"
+                />
               </div>
+              <p className="font-light text-sm text-emerald-100/90 text-center italic border-t border-emerald-400/20 pt-4">
+                Delivering fresh, high-quality mangoes to your doorstep with utmost care and excellence
+              </p>
             </div>
+            {/* </div> */}
 
             {/* Quick Links */}
             <div className="px-4">
@@ -1069,6 +1081,19 @@ const App = () => {
                     <span className="text-sm leading-relaxed">
                       #31, A Sector, Near Inox Garuda Mall, Canara Bank Complex,
                       Yelahanka New Town, Bengaluru-560064
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.google.com/maps/place/Purva+Venezia/@13.096507,77.5678388,962m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae187c87ed88ef:0x78eeb2ba7a5ee8db!8m2!3d13.096507!4d77.5704191!16s%2Fg%2F11btmcjh52!5m1!1e2?authuser=0&entry=ttu&g_ep=EgoyMDI1MDMzMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start gap-3 text-emerald-100/90 hover:text-white transition-colors duration-300"
+                  >
+                    <MapPin className="flex-shrink-0 mt-1 group-hover:text-emerald-400 transition-colors duration-300" size={20} />
+                    <span className="text-sm leading-relaxed">
+                      No 103 , Major Unnikrishnan Road Opposite To Purva Venezia Appartment Attur Layout Yelahanka Bengaluru - 560064
                     </span>
                   </a>
                 </li>

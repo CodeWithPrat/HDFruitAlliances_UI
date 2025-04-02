@@ -1033,7 +1033,7 @@ const App = () => {
                 <img
                   src={fmm_footer}
                   alt="Fresh Nature Mangoes Logo"
-                  className="h-14 w-auto hover:scale-105 transition-transform duration-300"
+                  className="h-20 w-auto hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <p className="font-light text-sm text-emerald-100/90 text-center italic border-t border-emerald-400/20 pt-4">

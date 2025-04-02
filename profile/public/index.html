@@ -3,49 +3,316 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="icon" href="%PUBLIC_URL%/fmm.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+  <meta name="theme-color" content="#FF8C00" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Fresh Mango Matrix | Premium Farm-Fresh Mangoes Delivered</title>
+  <meta name="title" content="Fresh Mango Matrix | Premium Farm-Fresh Mangoes Delivered">
+  <meta name="description" content="Discover the finest farm-fresh mangoes delivered straight to your door. Explore our wide variety of handpicked premium mangoes from the best orchards. Fresh Mango Matrix - taste the difference!">
+  <meta name="keywords" content="mangoes, fresh mangoes, mango delivery, premium mangoes, organic mangoes, farm-fresh, fruit delivery">
+  <meta name="author" content="Fresh Mango Matrix">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://freshmangomatrix.com/">
+  <meta property="og:title" content="Fresh Mango Matrix | Premium Farm-Fresh Mangoes Delivered">
+  <meta property="og:description" content="Discover the finest farm-fresh mangoes delivered straight to your door. Explore our wide variety of handpicked premium mangoes from the best orchards.">
+  <meta property="og:image" content="%PUBLIC_URL%/mango-og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://freshmangomatrix.com/">
+  <meta property="twitter:title" content="Fresh Mango Matrix | Premium Farm-Fresh Mangoes Delivered">
+  <meta property="twitter:description" content="Discover the finest farm-fresh mangoes delivered straight to your door. Explore our wide variety of handpicked premium mangoes from the best orchards.">
+  <meta property="twitter:image" content="%PUBLIC_URL%/mango-og-image.jpg">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://freshmangomatrix.com/">
+  
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/hfa.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
+  <!-- Preconnect to reduce latency -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Tangerine:wght@400;700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  
+  <!-- Preload critical assets -->
+  <link rel="preload" href="%PUBLIC_URL%/critical.css" as="style">
+  <link rel="preload" href="%PUBLIC_URL%/fonts/custom-font.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <!-- Fonts with display swap -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Tangerine:wght@400;700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  
+  <!-- Critical CSS inline -->
+  <style>
+    /* Critical path CSS goes here */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Tinos', serif;
+      background-color: #fff8f0;
+    }
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      background-color: #fff8f0;
+    }
+  </style>
+  
+  <!-- Non-critical CSS with async loading -->
+  <link rel="stylesheet" href="%PUBLIC_URL%/styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="%PUBLIC_URL%/styles.css"></noscript>
+  
+  <!-- Microsoft Clarity for heatmaps and session recording -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "q0bccka2ng");
+  </script>
 
-
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-  <title>React App</title>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFHMS5JNG5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TFHMS5JNG5', {
+      'send_page_view': false,
+      'anonymize_ip': true,
+      'cookie_expires': 365 * 24 * 60 * 60, // 1 year
+      'page_load_time_ms': true
+    });
+    
+    // Custom dimensions
+    gtag('set', {
+      'user_properties': {
+        'returning_user': localStorage.getItem('visited') ? 'yes' : 'no'
+      }
+    });
+    localStorage.setItem('visited', 'true');
+  </script>
+  
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '111111111111111');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=111111111111111&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+  
+  <!-- Hotjar Tracking Code -->
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2222222,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Fresh Mango Matrix",
+      "url": "https://freshmangomatrix.com",
+      "logo": "https://freshmangomatrix.com/hfa.png",
+      "description": "Fresh Mango Matrix brings you the finest, farm-fresh mangoes right to your doorstep.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-555-123-4567",
+        "contactType": "customer service",
+        "availableLanguage": ["English"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/freshmangomatrix",
+        "https://www.instagram.com/freshmangomatrix",
+        "https://twitter.com/freshmangomatrix"
+      ]
+    }
+  </script>
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://freshmangomatrix.com",
+      "name": "Fresh Mango Matrix",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://freshmangomatrix.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+  
+  <!-- Performance optimization -->
+  <script>
+    // Measure page load performance
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const perfData = window.performance.timing;
+        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+        const domContentLoadedTime = perfData.domContentLoadedEventEnd - perfData.navigationStart;
+        
+        if (window.gtag) {
+          gtag('event', 'timing_complete', {
+            'name': 'page_load',
+            'value': pageLoadTime,
+            'event_category': 'Performance'
+          });
+          
+          gtag('event', 'timing_complete', {
+            'name': 'dom_content_loaded',
+            'value': domContentLoadedTime,
+            'event_category': 'Performance'
+          });
+        }
+      }, 0);
+    });
+    
+    // Lazy load images
+    document.addEventListener("DOMContentLoaded", function() {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+      
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              if (lazyImage.dataset.srcset) {
+                lazyImage.srcset = lazyImage.dataset.srcset;
+              }
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+        
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      }
+    });
+  </script>
 </head>
 
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <noscript>
+    <div style="padding: 20px; text-align: center; background-color: #fff8f0;">
+      <h1>Welcome to Fresh Mango Matrix</h1>
+      <p>Fresh Mango Matrix brings you the finest, farm-fresh mangoes right to your doorstep!
+      Explore a wide variety of handpicked mangoes, sourced directly from the best orchards.
+      To browse our collection, place orders, and enjoy exclusive offers, please enable JavaScript in your browser.</p>
+    </div>
+  </noscript>
+  
+  <div id="root">
+    <!-- Loading spinner for better user experience -->
+    <div class="loading">
+      <svg width="50" height="50" viewBox="0 0 50 50">
+        <circle cx="25" cy="25" r="20" fill="none" stroke="#FF8C00" stroke-width="5">
+          <animate attributeName="stroke-dasharray" from="1, 150" to="90, 150" dur="1.5s" repeatCount="indefinite" />
+          <animate attributeName="stroke-dashoffset" from="0" to="-125" dur="1.5s" repeatCount="indefinite" />
+        </circle>
+      </svg>
+    </div>
+  </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('%PUBLIC_URL%/service-worker.js').then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
+  
+  <!-- User engagement tracking -->
+  <script>
+    // Track scroll depth
+    let scrollDepths = [25, 50, 75, 90];
+    let sentDepths = [];
+    
+    window.addEventListener('scroll', function() {
+      const scrollPercentage = 100 * window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      
+      for (let depth of scrollDepths) {
+        if (scrollPercentage >= depth && !sentDepths.includes(depth)) {
+          sentDepths.push(depth);
+          if (window.gtag) {
+            gtag('event', 'scroll_depth', {
+              'depth': depth,
+              'page_title': document.title,
+              'page_location': window.location.href
+            });
+          }
+        }
+      }
+    }, {passive: true});
+    
+    // Track user engagement time
+    let engagementTime = 0;
+    let engagementTimer = setInterval(function() {
+      engagementTime += 10;
+      
+      if (engagementTime % 60 === 0) {
+        const minutes = engagementTime / 60;
+        if (window.gtag) {
+          gtag('event', 'engagement_time', {
+            'time_minutes': minutes,
+            'page_title': document.title
+          });
+        }
+      }
+    }, 10000);
+    
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', function() {
+      clearInterval(engagementTimer);
+    });
+  </script>
 </body>
 
 </html>

@@ -55,7 +55,7 @@ const MessageCards = () => {
                             />
                         </div>
                         <h2 className="text-3xl font-tangerine text-green-950 font-bold text-center mb-2">
-                            Beerappanahalli Narasimha Gowda
+                            Late Mr. Beerappanahalli Narasimha Gowda
                         </h2>
                         <h3 className="text-lg text-green-800 text-center mb-2 font-medium font-tinos">Founder</h3>
                         <div className="h-px bg-gradient-to-r from-transparent via-green-200 to-transparent my-3" />
@@ -86,7 +86,7 @@ const MessageCards = () => {
                             />
                         </div>
                         <h2 className="text-3xl font-tangerine text-green-950 font-bold text-center mb-2">
-                            Beerappanahalli Dyavappa
+                            Mr. Beerappanahalli Dyavappa
                         </h2>
                         <h3 className="text-lg text-green-800 text-center mb-2 font-medium font-tinos">Co Founder</h3>
                         <div className="h-px bg-gradient-to-r from-transparent via-green-200 to-transparent my-3" />
@@ -118,7 +118,7 @@ const MessageCards = () => {
                         </div>
 
                         <h2 className="text-3xl font-tangerine text-green-950 font-bold text-center mb-2">
-                            Hari Krishna D
+                            Mr. Hari Krishna D
                         </h2>
                         <h3 className="text-lg text-green-800 text-center mb-2 font-tinos font-medium">Managing Director</h3>
                         <div className="h-px bg-gradient-to-r from-transparent via-green-200 to-transparent my-3" />

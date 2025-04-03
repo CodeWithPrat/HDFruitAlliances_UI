@@ -25,7 +25,7 @@ import {
   Sprout,
   ShieldCheck,
   Check,
-  Sparkles, Facebook, Instagram, Linkedin, Twitter
+  Sparkles, Facebook, Instagram, Linkedin, Twitter, Youtube
 } from "lucide-react";
 
 import HeroSection from "./Components/HeroSection";
@@ -554,7 +554,7 @@ const App = () => {
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
-                        Welcome to Fresh Mango Matrix, a unit of HD Fruit Alliances
+                        Welcome to Fresh Mango Matrix&apos; A Unit of HD Fruit Alliances
                       </motion.h2>
 
                       <motion.div
@@ -587,7 +587,7 @@ const App = () => {
                       >
                         <h3 className="font-garamond text-2xl text-green-700 mb-4">Our Mission</h3>
                         <p className="text-neutral-600 font-tinos">
-                          At Fresh Mango Matrix' a unit of HD Fruit Alliances, our mission is simple yet powerful: to delight customers with the most pristine,
+                          At Fresh Mango Matrix&apos; A Unit of HD Fruit Alliances, our mission is simple yet powerful: to delight customers with the most pristine,
                           highest-quality Mangoes. From orchard to doorstep, we’re dedicated to supplying you with the finest selection
                           of Mangoes, ensuring every bite is a burst of flavor and nutrition. Experience the difference with Fresh Mango Matrix
                           – where quality meets satisfaction, one juicy bite at a time. Along with this our aim to transform
@@ -1021,15 +1021,8 @@ const App = () => {
         <div className="w-full max-w-8xl mx-auto px-6 lg:px-8 pb-12 ">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 p-6">
             {/* Company Info */}
-            {/* <div className="bg-white/5  rounded-2xl p-6 shadow-xl border border-white/10"> */}
             <div className="flex flex-col items-center space-y-4">
               <div className="flex items-center justify-between gap-4">
-                {/* <img
-                    src={hfa_footer}
-                    alt="HD Fruit Alliances Logo"
-                    className="h-10 w-auto hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="h-12 w-px bg-emerald-400/20" /> */}
                 <img
                   src={fmm_footer}
                   alt="Fresh Nature Mangoes Logo"
@@ -1040,7 +1033,6 @@ const App = () => {
                 Delivering fresh, high-quality mangoes to your doorstep with utmost care and excellence
               </p>
             </div>
-            {/* </div> */}
 
             {/* Quick Links */}
             <div className="px-4">
@@ -1098,27 +1090,39 @@ const App = () => {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="tel:+918151881796"
-                    className="group flex items-center gap-3 text-emerald-100/90 hover:text-white transition-colors duration-300"
-                  >
-                    <Phone className="group-hover:text-emerald-400 transition-colors duration-300" size={20} />
-                    <span className="text-sm">+91 8151881796</span>
-                  </a>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+                    <a href="tel:+918151881796" className="flex items-center gap-2 text-emerald-100/90 hover:text-white transition-colors duration-300">
+                      <Phone className="flex-shrink-0 group-hover:text-emerald-400 transition-colors duration-300" size={16} />
+                      <span className="text-sm">+91 8151881796</span>
+                    </a>
+                    <a href="tel:+919364897935" className="flex items-center gap-2 text-emerald-100/90 hover:text-white transition-colors duration-300">
+                      <Phone className="flex-shrink-0 group-hover:text-emerald-400 transition-colors duration-300" size={16} />
+                      <span className="text-sm">+91 9364897935</span>
+                    </a>
+                    <a href="tel:+919364897936" className="flex items-center gap-2 text-emerald-100/90 hover:text-white transition-colors duration-300">
+                      <Phone className="flex-shrink-0 group-hover:text-emerald-400 transition-colors duration-300" size={16} />
+                      <span className="text-sm">+91 9364897936</span>
+                    </a>
+                    <a href="tel:+919364897934" className="flex items-center gap-2 text-emerald-100/90 hover:text-white transition-colors duration-300">
+                      <Phone className="flex-shrink-0 group-hover:text-emerald-400 transition-colors duration-300" size={16} />
+                      <span className="text-sm">+91 9364897934</span>
+                    </a>
+                  </div>
                 </li>
+
                 <li>
                   <a
-                    href="mailto:info@hdfruitalliances.com"
+                    href="mailto:freshmangomatrix@gmail.com"
                     className="group flex items-center gap-3 text-emerald-100/90 hover:text-white transition-colors duration-300"
                   >
                     <Mail className="group-hover:text-emerald-400 transition-colors duration-300" size={20} />
-                    <span className="text-sm">info@hdfruitalliances.com</span>
+                    <span className="text-sm">freshmangomatrix@gmail.com</span>
                   </a>
                 </li>
               </ul>
             </div>
 
-            {/* Business Hours */}
+            {/* Business Hours & Social Media */}
             <div className="px-4">
               <h3 className="text-2xl font-light mb-8 relative">
                 Business Hours
@@ -1127,17 +1131,66 @@ const App = () => {
               <ul className="space-y-4 text-sm text-emerald-100/90">
                 <li className="flex justify-between">
                   <span>Monday - Friday:</span>
-                  <span>9:00 AM - 6:00 PM</span>
+                  <span>9:00 AM - 10:00 PM</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Saturday:</span>
-                  <span>9:00 AM - 4:00 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Sunday:</span>
-                  <span>Closed</span>
+                  <span>Saturday - Sunday:</span>
+                  <span>8:00 AM - 10:00 PM</span>
                 </li>
               </ul>
+
+              {/* Social Media Icons */}
+              <h3 className="text-2xl font-light mt-8 mb-6 relative">
+                Connect With Us
+                <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-emerald-400"></span>
+              </h3>
+              <div className="flex space-x-4">
+                <a
+                  href="https://www.facebook.com/FreshMangoMatrix/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-emerald-700/50 hover:bg-emerald-600 rounded-full p-2.5 transition-colors duration-300"
+                  aria-label="Facebook"
+                >
+                  <Facebook size={20} />
+                </a>
+                <a
+                  href="https://www.instagram.com/freshmangomatrix/?next=%2F&hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-emerald-700/50 hover:bg-emerald-600 rounded-full p-2.5 transition-colors duration-300"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a
+                  href="https://twitter.com/matrix_mango1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-emerald-700/50 hover:bg-emerald-600 rounded-full p-2.5 transition-colors duration-300"
+                  aria-label="Twitter"
+                >
+                  <Twitter size={20} />
+                </a>
+                <a
+                  href="https://www.youtube.com/@FreshMangoMatrix"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-emerald-700/50 hover:bg-emerald-600 rounded-full p-2.5 transition-colors duration-300"
+                  aria-label="YouTube"
+                >
+                  <Youtube size={20} />
+                </a>
+                <a
+                  href="https://linkedin.com/in/fresh-mango-matrix-undefined-9065a4355"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-emerald-700/50 hover:bg-emerald-600 rounded-full p-2.5 transition-colors duration-300"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={20} />
+                </a>
+              </div>
             </div>
           </div>
 

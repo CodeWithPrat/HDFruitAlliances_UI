@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Navigation, Copy } from 'lucide-react';
+import { MapPin, Navigation, Copy, Plus, Minus } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 
 const LocationSection = () => {
@@ -10,8 +10,7 @@ const LocationSection = () => {
     enquiryType: '',
     preferredLocation: '',
     comments: '',
-    mangoTypes: [],
-    mangoQuantity: ''
+    mangoOrders: []  // Array of objects with type, quantity (now in boxes), and boxSize
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({
@@ -80,45 +79,84 @@ const LocationSection = () => {
     }));
   };
 
-  // Handle checkbox change for mango types
-  const handleMangoTypeChange = (type) => {
-    setFormData(prev => {
-      const updatedMangoTypes = [...prev.mangoTypes];
-      if (updatedMangoTypes.includes(type)) {
-        // Remove if already selected
-        return {
-          ...prev,
-          mangoTypes: updatedMangoTypes.filter(item => item !== type)
-        };
-      } else {
-        // Add if not selected
-        return {
-          ...prev,
-          mangoTypes: [...updatedMangoTypes, type]
-        };
-      }
-    });
+  // Handle adding a mango type to order
+  const handleAddMangoType = (mangoType) => {
+    // Check if this mango type is already in the order
+    if (formData.mangoOrders.some(order => order.type === mangoType)) {
+      return; // Already added
+    }
+    
+    // Add new mango type with default quantity
+    setFormData(prev => ({
+      ...prev,
+      mangoOrders: [...prev.mangoOrders, {
+        type: mangoType,
+        quantity: 1, // Default to 1 box
+        boxSize: '5kg' // Default box size
+      }]
+    }));
+  };
+
+  // Handle removing a mango type from order
+  const handleRemoveMangoType = (mangoType) => {
+    setFormData(prev => ({
+      ...prev,
+      mangoOrders: prev.mangoOrders.filter(order => order.type !== mangoType)
+    }));
+  };
+
+  // Handle quantity change for a specific mango type
+  const handleQuantityChange = (mangoType, value) => {
+    setFormData(prev => ({
+      ...prev,
+      mangoOrders: prev.mangoOrders.map(order => 
+        order.type === mangoType 
+          ? { ...order, quantity: value } 
+          : order
+      )
+    }));
+  };
+
+  // Handle box size change for a specific mango type
+  const handleBoxSizeChange = (mangoType, boxSize) => {
+    setFormData(prev => ({
+      ...prev,
+      mangoOrders: prev.mangoOrders.map(order => 
+        order.type === mangoType 
+          ? { ...order, boxSize: boxSize } 
+          : order
+      )
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Create the data to be sent, formatting mango types as a string if needed
+    // Format mango orders for submission
+    // Create a formatted string of orders for easy reading in spreadsheet
+    const formattedOrders = formData.mangoOrders.map(order => {
+      // Calculate total weight based on box size and quantity
+      const weightPerBox = order.boxSize === '5kg' ? 5 : 10;
+      const totalWeight = weightPerBox * order.quantity;
+      return `${order.type}: ${order.quantity} boxes of ${order.boxSize} (${totalWeight}kg total)`;
+    }).join('; ');
+    
+    // Create the data to be sent
     const dataToSend = {
       ...formData,
-      mangoTypes: formData.mangoTypes.join(', ') // Convert array to comma-separated string
+      mangoOrders: formattedOrders // Send as formatted string
     };
     
     // Your Google Apps Script Web App URL
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxDp8WxAJMpV_ydRt5_rOEQc5GXrxeVhcZ5XHt6MC2GYs6nDSy8FDBr0kcrlak6yLOxcw/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyhsY6xlVWuApuUX48WSwTHVp8OKKeI-pLulwyBEo4x3JcJxMsRnNUTLSerjdy_SW9f/exec';
     
     try {
       // Try both approaches - first with regular fetch
       try {
         const response = await fetch(scriptURL, {
           method: 'POST',
-          body: JSON.stringify(dataToSend), // Send the modified data
+          body: JSON.stringify(dataToSend),
           headers: {
             'Content-Type': 'application/json'
           }
@@ -135,7 +173,7 @@ const LocationSection = () => {
       // If regular fetch fails, try with no-cors mode
       fetch(scriptURL, {
         method: 'POST',
-        body: JSON.stringify(dataToSend), // Send the modified data
+        body: JSON.stringify(dataToSend),
         headers: {
           'Content-Type': 'application/json'
         },
@@ -173,12 +211,21 @@ const LocationSection = () => {
       enquiryType: '',
       preferredLocation: '',
       comments: '',
-      mangoTypes: [],
-      mangoQuantity: ''
+      mangoOrders: []
     });
     
     setIsSubmitting(false);
   };
+
+  // Calculate total quantity of mangoes ordered (in kg)
+  const totalQuantity = formData.mangoOrders.reduce((sum, order) => {
+    const weightPerBox = order.boxSize === '5kg' ? 5 : 10;
+    return sum + (parseInt(order.quantity || 0) * weightPerBox);
+  }, 0);
+
+  // Calculate total number of boxes
+  const totalBoxes = formData.mangoOrders.reduce((sum, order) => 
+    sum + parseInt(order.quantity || 0), 0);
 
   return (
     <div className="w-full bg-white py-12">
@@ -328,42 +375,133 @@ const LocationSection = () => {
                     <>
                       <div>
                         <label className="block font-tinos text-gray-700 mb-2">
-                          Type of Mango to Order <span className="text-red-500">*</span>
+                          Select Mango Varieties <span className="text-red-500">*</span>
                         </label>
-                        <div className="max-h-48 overflow-y-auto p-3 border border-gray-300 rounded-lg">
-                          {mangoTypes.map((type) => (
-                            <div key={type} className="flex items-center mb-2">
-                              <input
-                                type="checkbox"
-                                id={`mango-${type}`}
-                                checked={formData.mangoTypes.includes(type)}
-                                onChange={() => handleMangoTypeChange(type)}
-                                className="mr-2 h-4 w-4 text-green3 focus:ring-green3 border-gray-300 rounded"
-                              />
-                              <label htmlFor={`mango-${type}`} className="font-tinos text-gray-700">
-                                {type}
-                              </label>
-                            </div>
-                          ))}
+                        <div className="mb-4">
+                          <select
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green3 focus:border-transparent"
+                            onChange={(e) => {
+                              if (e.target.value) {
+                                handleAddMangoType(e.target.value);
+                                e.target.value = ''; // Reset dropdown after selection
+                              }
+                            }}
+                            value=""
+                          >
+                            <option value="">Add a mango variety</option>
+                            {mangoTypes
+                              .filter(type => !formData.mangoOrders.some(order => order.type === type))
+                              .map((type) => (
+                                <option key={type} value={type}>{type}</option>
+                              ))
+                            }
+                          </select>
                         </div>
-                        {formData.mangoTypes.length === 0 && formData.enquiryType === 'Order' && (
-                          <p className="text-sm text-red-500 mt-1">Please select at least one type of mango</p>
+                        
+                        {/* Selected mangoes with quantities */}
+                        {formData.mangoOrders.length > 0 ? (
+                          <div className="space-y-4 mb-4 max-h-64 overflow-y-auto p-3 border border-gray-300 rounded-lg">
+                            {formData.mangoOrders.map((order, index) => (
+                              <div key={index} className="bg-gray-50 p-3 rounded-lg space-y-3">
+                                <div className="flex justify-between items-center">
+                                  <span className="font-tinos font-medium text-darkGreen2">{order.type}</span>
+                                  <button 
+                                    type="button"
+                                    onClick={() => handleRemoveMangoType(order.type)}
+                                    className="text-red-500 text-sm hover:text-red-700"
+                                  >
+                                    Remove
+                                  </button>
+                                </div>
+                                
+                                <div className="flex flex-col sm:flex-row gap-3">
+                                  {/* Box Size Selection */}
+                                  <div className="flex-1">
+                                    <label className="block text-sm text-gray-600 mb-1">Box Size</label>
+                                    <div className="flex">
+                                      <button
+                                        type="button"
+                                        className={`flex-1 py-1 px-2 text-sm font-tinos ${order.boxSize === '5kg' ? 'bg-green3 text-white' : 'bg-gray-100 text-gray-700'} border border-gray-200 rounded-l-md`}
+                                        onClick={() => handleBoxSizeChange(order.type, '5kg')}
+                                      >
+                                        5kg Box
+                                      </button>
+                                      <button
+                                        type="button"
+                                        className={`flex-1 py-1 px-2 text-sm font-tinos ${order.boxSize === '10kg' ? 'bg-green3 text-white' : 'bg-gray-100 text-gray-700'} border border-gray-200 rounded-r-md`}
+                                        onClick={() => handleBoxSizeChange(order.type, '10kg')}
+                                      >
+                                        10kg Box
+                                      </button>
+                                    </div>
+                                  </div>
+                                  
+                                  {/* Quantity Control - CHANGED TO NUMBER OF BOXES */}
+                                  <div className="flex-1">
+                                    <label className="block text-sm text-gray-600 mb-1">Quantity (No. of boxes)</label>
+                                    <div className="flex items-center">
+                                      <button
+                                        type="button"
+                                        onClick={() => {
+                                          const newValue = Math.max(parseInt(order.quantity) - 1, 1);
+                                          handleQuantityChange(order.type, newValue);
+                                        }}
+                                        className="bg-gray-100 text-gray-700 hover:bg-gray-200 h-8 w-8 flex items-center justify-center rounded-l-md border border-gray-300"
+                                      >
+                                        <Minus className="w-4 h-4" />
+                                      </button>
+                                      <input
+                                        type="number"
+                                        min="1"
+                                        step="1"
+                                        value={order.quantity}
+                                        onChange={(e) => handleQuantityChange(order.type, parseInt(e.target.value || '1'))}
+                                        className="h-8 text-center border-t border-b border-gray-300 w-16 focus:outline-none focus:ring-0 focus:border-gray-300"
+                                      />
+                                      <button
+                                        type="button"
+                                        onClick={() => {
+                                          const newValue = parseInt(order.quantity) + 1;
+                                          handleQuantityChange(order.type, newValue);
+                                        }}
+                                        className="bg-gray-100 text-gray-700 hover:bg-gray-200 h-8 w-8 flex items-center justify-center rounded-r-md border border-gray-300"
+                                      >
+                                        <Plus className="w-4 h-4" />
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          formData.enquiryType === 'Order' && (
+                            <p className="text-sm text-red-500 mb-4">Please select at least one type of mango</p>
+                          )
                         )}
-                      </div>
-                      
-                      <div>
-                        <label className="block font-tinos text-gray-700 mb-2">
-                          Quantity (Kg) <span className="text-red-500">*</span>
-                        </label>
-                        <input
-                          type="number"
-                          name="mangoQuantity"
-                          value={formData.mangoQuantity}
-                          onChange={handleInputChange}
-                          min="1"
-                          required={formData.enquiryType === 'Order'}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green3 focus:border-transparent"
-                        />
+                        
+                        {/* Order Summary */}
+                        {formData.mangoOrders.length > 0 && (
+                          <div className="bg-green-50 p-3 rounded-lg mb-4">
+                            <h4 className="font-tinos font-bold text-darkGreen2 mb-2">Order Summary</h4>
+                            <ul className="space-y-1 text-sm text-gray-700">
+                              {formData.mangoOrders.map((order, idx) => {
+                                const weightPerBox = order.boxSize === '5kg' ? 5 : 10;
+                                const totalWeight = weightPerBox * order.quantity;
+                                return (
+                                  <li key={idx}>
+                                    {order.type}: {order.quantity} x {order.boxSize} box{order.quantity > 1 ? 'es' : ''} ({totalWeight}kg)
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                            <div className="mt-2 pt-2 border-t border-green-200">
+                              <p className="font-tinos font-bold text-darkGreen2">
+                                Total: {totalBoxes} box{totalBoxes > 1 ? 'es' : ''} ({totalQuantity}kg)
+                              </p>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </>
                   )}
@@ -400,7 +538,7 @@ const LocationSection = () => {
 
                   <button
                     type="submit"
-                    disabled={isSubmitting || (formData.enquiryType === 'Order' && (formData.mangoTypes.length === 0 || !formData.mangoQuantity))}
+                    disabled={isSubmitting || (formData.enquiryType === 'Order' && formData.mangoOrders.length === 0)}
                     className="w-full bg-green3 text-white py-3 rounded-lg hover:bg-green4 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed font-tinos font-bold"
                   >
                     {isSubmitting ? 'Submitting...' : 'Submit'}

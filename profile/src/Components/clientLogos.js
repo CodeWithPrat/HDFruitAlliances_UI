@@ -30,9 +30,9 @@ const OurClients = () => {
     },
     { 
       id: 4, 
-      name: 'SBM Offshore Company', 
+      name: 'SBM Offshore', 
       logo: sbm,
-      alt: 'SBM Offshore Company logo' 
+      alt: 'SBM Offshore logo' 
     }
   ];
 

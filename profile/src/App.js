@@ -554,7 +554,7 @@ const App = () => {
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
-                        Welcome to Fresh Mango Matrix&apos; A Unit of HD Fruit Alliances
+                        Welcome to Fresh Mango Matrix - A Unit of HD Fruit Alliances
                       </motion.h2>
 
                       <motion.div
@@ -575,7 +575,7 @@ const App = () => {
                       >
                         <h3 className="font-garamond text-2xl text-green-700 mb-4">Our Legacy</h3>
                         <p className="text-neutral-600 font-tinos">
-                          Founded by Beerappanahalli Narasimha Gowda carried by Beerappanahalli Dyavappa and now led by Mr. Hari Krishna D,
+                          Founded by Late Mr. Beerappanahalli Narasimha Gowda carried by Mr.Beerappanahalli Dyavappa and now led by Mr. Hari Krishna D,
                           we carry forward a four-generation legacy of excellence in fruit distribution.
                         </p>
                       </motion.div>
@@ -587,7 +587,7 @@ const App = () => {
                       >
                         <h3 className="font-garamond text-2xl text-green-700 mb-4">Our Mission</h3>
                         <p className="text-neutral-600 font-tinos">
-                          At Fresh Mango Matrix&apos; A Unit of HD Fruit Alliances, our mission is simple yet powerful: to delight customers with the most pristine,
+                          At Fresh Mango Matrix - A Unit of HD Fruit Alliances, our mission is simple yet powerful: to delight customers with the most pristine,
                           highest-quality Mangoes. From orchard to doorstep, we’re dedicated to supplying you with the finest selection
                           of Mangoes, ensuring every bite is a burst of flavor and nutrition. Experience the difference with Fresh Mango Matrix
                           – where quality meets satisfaction, one juicy bite at a time. Along with this our aim to transform

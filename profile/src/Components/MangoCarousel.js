@@ -11,6 +11,7 @@ import mallika from "../Images/mangosjpg/Mallika.jpg"
 import malgova from "../Images/mangosjpg/Malgova.jpg"
 import raspuri from "../Images/mangosjpg/Raspuri.jpg"
 import sugarbeans from "../Images/mangosjpg/Sugar.jpg"
+import Totapuri from "../Images/mangosjpg/Totapuri.jpg"
 
 // Sample data for mango varieties
 const mangoes = [
@@ -90,6 +91,13 @@ const mangoes = [
     price5kg: 880,
     price10kg: 1680,
     image: Daseri
+  },
+  {
+    id: 12,
+    name: "Totapuri Mango",
+    price5kg: 780,
+    price10kg: 1450,
+    image: Totapuri
   }
 ];
 
@@ -314,11 +322,11 @@ const MangoCarousel = () => {
                       <h3 className="text-xl font-bold text-green-800 mb-2">{mango.name}</h3>
                       <div className="flex-grow">
                         <div className="mb-3">
-                          <p className="text-black text-sm">5 Kg Pack</p>
+                          <p className="text-black text-sm">5 Kg Box</p>
                           <p className="text-xl font-bold text-orange-700">₹{mango.price5kg}</p>
                         </div>
                         <div className="mb-4">
-                          <p className="text-black text-sm">10 Kg Pack</p>
+                          <p className="text-black text-sm">10 Kg Box</p>
                           <p className="text-xl font-bold text-orange-700">₹{mango.price10kg}</p>
                         </div>
                       </div>

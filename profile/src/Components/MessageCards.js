@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Flower2 } from 'lucide-react';
 import hari from "../Images/Owners/hari.jpeg"
-import hd from "../Images/Owners/HD.jpeg"
+import hd from "../Images/Owners/HD.jpg"
 import hg from "../Images/Owners/HG.jpeg"
 
 const MessageCards = () => {
@@ -55,13 +55,13 @@ const MessageCards = () => {
                             />
                         </div>
                         <h2 className="text-3xl font-tangerine text-green-950 font-bold text-center mb-2">
-                            Late Mr. Beerappanahalli Narasimha Gowda
+                            Late Beerappanahalli Narasimha Gowda
                         </h2>
                         <h3 className="text-lg text-green-800 text-center mb-2 font-medium font-tinos">Founder</h3>
                         <div className="h-px bg-gradient-to-r from-transparent via-green-200 to-transparent my-3" />
                         <div className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-green-200 scrollbar-track-transparent pr-2">
                             <p className="font-garamond text-base text-gray-700 leading-relaxed mb-3">
-                                It is with immense gratitude and pride that I address you as the Founder of Fresh Mango Matrix - a unit of HD Fruit Alliances. Our journey in the fruit industry spans four generations, built on a foundation of trust, quality, and an unwavering commitment to excellence.
+                                It is with immense gratitude and pride that I address you as the Founder of Fresh Mango Matrix - A Unit of HD Fruit Alliances. Our journey in the fruit industry spans four generations, built on a foundation of trust, quality, and an unwavering commitment to excellence.
                             </p>
                             <p className="font-garamond text-base text-gray-700 leading-relaxed">
                                 This legacy is not just a business for us—it is a responsibility that we uphold with sincerity and dedication.
@@ -88,11 +88,11 @@ const MessageCards = () => {
                         <h2 className="text-3xl font-tangerine text-green-950 font-bold text-center mb-2">
                             Mr. Beerappanahalli Dyavappa
                         </h2>
-                        <h3 className="text-lg text-green-800 text-center mb-2 font-medium font-tinos">Co Founder</h3>
+                        <h3 className="text-lg text-green-800 text-center mb-2 font-medium font-tinos">Co-Founder</h3>
                         <div className="h-px bg-gradient-to-r from-transparent via-green-200 to-transparent my-3" />
                         <div className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-green-200 scrollbar-track-transparent pr-2">
                             <p className="font-garamond text-base text-gray-700 leading-relaxed mb-3">
-                                At Fresh Mango Matrix - a unit of HD Fruit Alliances, our mission is simple yet profound—to deliver the finest fruits with the highest standards of freshness, nutrition, and quality.
+                                At Fresh Mango Matrix - A Unit of HD Fruit Alliances, our mission is simple yet profound—to deliver the finest fruits with the highest standards of freshness, nutrition, and quality.
                             </p>
                             <p className="font-garamond text-base text-gray-700 leading-relaxed">
                                 As we move forward, our vision is not only to provide premium fruits but also to create meaningful business opportunities.

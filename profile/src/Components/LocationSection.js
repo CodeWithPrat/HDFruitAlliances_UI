@@ -27,14 +27,14 @@ const LocationSection = () => {
     "Alphonso Mango", "Banganapalli Mango", "Sindhura Mango", 
     "Mallika Mango", "Sugar Beans Mango", "Malgova Mango", 
     "Raspuri Mango", "Kesar Mango", "Imampasand Mango", 
-    "Kalapad Mango", "Daseri Mango"
+    "Kalapad Mango", "Daseri Mango", "Totapuri Mango"
   ];
 
   // Locations data array
   const locations = [
     {
       id: 1,
-      name: "Yelahanka Satellite Town",
+      name: " Yelahanka New Town",
       address: "No. 31, Canara Bank Complex, near INOX Garuda Mall, Sector A, Yelahanka Satellite Town, Yelahanka New Town, Bengaluru, Karnataka 560064",
       plusCode: "3HWM+HC Bengaluru, Karnataka",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4189.640298451319!2d77.58102631096074!3d13.096450287177277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae194a795db087%3A0xba9b2e8e95e548fb!2sFresh%20Mango%20Matrix-A%20Unit%20of%20HD%20Fruit%20Alliances!5e1!3m2!1sen!2sin!4v1743575379418!5m2!1sen!2sin",
@@ -42,7 +42,7 @@ const LocationSection = () => {
     },
     {
       id: 2,
-      name: "Attur Layout Yelahanka",
+      name: "Attur Layout, Yelahanka",
       address: "No 103 , Major Unnikrishnan Road Opposite To Purva Venezia Appartment Attur Layout Yelahanka Bengaluru - 560064",
       plusCode: "3HWC+J5 Bengaluru, Karnataka",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4189.639333898142!2d77.56783881096075!3d13.096506987177209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae187c87ed88ef%3A0x78eeb2ba7a5ee8db!2sPurva%20Venezia!5e1!3m2!1sen!2sin!4v1743575205552!5m2!1sen!2sin" ,

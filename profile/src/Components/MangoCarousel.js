@@ -2,16 +2,17 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, ShoppingCart } from 'lucide-react';
 import alphonso from "../Images/mangosjpg/alphonso.jpg"
 import banganapalli from "../Images/mangosjpg/banganapalli.jpg"
-import sindhura from "../Images/mangosjpg/Sindhura.jpg"
+import sindhura from "../Images/mangosjpg/Sindhura.jpeg"
 import Daseri from "../Images/mangosjpg/Daseri.jpg"
 import imampassand from "../Images/mangosjpg/imampasand.jpg"
 import kalapad from "../Images/mangosjpg/Kalapad.jpg"
 import kesar from "../Images/mangosjpg/kesar.jpg"
-import mallika from "../Images/mangosjpg/Mallika.jpg"
+import mallika from "../Images/mangosjpg/Mallika.jpeg"
 import malgova from "../Images/mangosjpg/Malgova.jpg"
-import raspuri from "../Images/mangosjpg/Raspuri.jpg"
+import raspuri from "../Images/mangosjpg/Raspuri.jpeg"
 import sugarbeans from "../Images/mangosjpg/Sugar.jpg"
 import Totapuri from "../Images/mangosjpg/Totapuri.jpg"
+import Neelam from "../Images/mangosjpg/Neelam.jpg"
 
 // Sample data for mango varieties
 const mangoes = [
@@ -98,6 +99,13 @@ const mangoes = [
     price5kg: 780,
     price10kg: 1450,
     image: Totapuri
+  },
+  {
+    id: 13,
+    name: "Neelam mango",
+    price5kg: 1000,
+    price10kg: 2000,
+    image: Neelam
   }
 ];
 
@@ -323,11 +331,11 @@ const MangoCarousel = () => {
                       <div className="flex-grow">
                         <div className="mb-3">
                           <p className="text-black text-sm">5 Kg Box</p>
-                          <p className="text-xl font-bold text-orange-700">₹{mango.price5kg}</p>
+                          <p className="text-xl font-bold text-orange-700">price on request</p>
                         </div>
                         <div className="mb-4">
                           <p className="text-black text-sm">10 Kg Box</p>
-                          <p className="text-xl font-bold text-orange-700">₹{mango.price10kg}</p>
+                          <p className="text-xl font-bold text-orange-700">price on request</p>
                         </div>
                       </div>
                       <a href='#contact'>

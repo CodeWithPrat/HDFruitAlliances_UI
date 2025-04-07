@@ -27,7 +27,7 @@ const LocationSection = () => {
     "Alphonso Mango", "Banganapalli Mango", "Sindhura Mango", 
     "Mallika Mango", "Sugar Beans Mango", "Malgova Mango", 
     "Raspuri Mango", "Kesar Mango", "Imampasand Mango", 
-    "Kalapad Mango", "Daseri Mango", "Totapuri Mango"
+    "Kalapad Mango", "Daseri Mango", "Totapuri Mango","Neelam mango"
   ];
 
   // Locations data array

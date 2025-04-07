@@ -88,7 +88,7 @@ const TestimonialsSection = () => {
     {
       name: "Lakshmi Narayanan",
       role: "Nutritionist",
-      text: "High-quality, chemical-free fruits that I confidently recommend to my clients.",
+      text: "High-quality fruits that I confidently recommend to my clients.",
       stars: 5,
       image: lakshmi,
     },

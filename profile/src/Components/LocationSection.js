@@ -50,11 +50,11 @@ const LocationSection = () => {
     },
     {
       id: 3,
-      name: "Whitefield Branch",
-      address: "Shop No. 45, Whitefield Main Road, Near Forum Mall, Whitefield, Bengaluru, Karnataka 560066",
+      name: "Yelhanka old town",
+      address: "No 10 - 116 Back Side Of MVM Complex , Yelhanka Old Town Bus Stop Bengaluru- 560064",
       plusCode: "6GMJ+93 Bengaluru, Karnataka",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.3208135835313!2d77.7397499!3d12.9591045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13c8c6a32541%3A0xce0db77a21fd05a4!2sWhitefield%20Main%20Rd%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1706725846015!5m2!1sen!2sin",
-      directionsUrl: "https://www.google.com/maps/dir//Whitefield+Main+Rd,+Bengaluru,+Karnataka"
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4189.594474873749!2d77.5981864!3d13.0991437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae185716b2e735%3A0x4d5718cd5de42708!2s357%2FA%2C%20Nehru%20Nagar%2C%20Bengaluru%2C%20Karnataka%20560064!5e1!3m2!1sen!2sin!4v1744885758488!5m2!1sen!2sin",
+      directionsUrl: "https://www.google.com/maps/place/357%2FA,+Nehru+Nagar,+Bengaluru,+Karnataka+560064/@13.0991437,77.5981864,962m/data=!3m1!1e3!4m15!1m8!3m7!1s0x3bae185716b2e735:0x4d5718cd5de42708!2s357%2FA,+Nehru+Nagar,+Bengaluru,+Karnataka+560064!3b1!8m2!3d13.0991437!4d77.5981864!16s%2Fg%2F11fzf2bh5j!3m5!1s0x3bae185716b2e735:0x4d5718cd5de42708!8m2!3d13.0991437!4d77.5981864!16s%2Fg%2F11fzf2bh5j?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D"
     }
   ];
 

@@ -1090,6 +1090,19 @@ const App = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="https://www.google.com/maps/place/357%2FA,+Nehru+Nagar,+Bengaluru,+Karnataka+560064/@13.0991437,77.5981864,962m/data=!3m1!1e3!4m15!1m8!3m7!1s0x3bae185716b2e735:0x4d5718cd5de42708!2s357%2FA,+Nehru+Nagar,+Bengaluru,+Karnataka+560064!3b1!8m2!3d13.0991437!4d77.5981864!16s%2Fg%2F11fzf2bh5j!3m5!1s0x3bae185716b2e735:0x4d5718cd5de42708!8m2!3d13.0991437!4d77.5981864!16s%2Fg%2F11fzf2bh5j?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start gap-3 text-emerald-100/90 hover:text-white transition-colors duration-300"
+                  >
+                    <MapPin className="flex-shrink-0 mt-1 group-hover:text-emerald-400 transition-colors duration-300" size={20} />
+                    <span className="text-sm leading-relaxed">
+                      No 10 - 116 Back Side Of MVM Complex , Yelhanka Old Town Bus Stop Bengaluru- 560064
+                    </span>
+                  </a>
+                </li>
+                <li>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
                     <a href="tel:+918151881796" className="flex items-center gap-2 text-emerald-100/90 hover:text-white transition-colors duration-300">
                       <Phone className="flex-shrink-0 group-hover:text-emerald-400 transition-colors duration-300" size={16} />

@@ -19,92 +19,92 @@ const mangoes = [
   {
     id: 1,
     name: "Alphonso Mango",
-    price5kg: 1200,
-    price10kg: 2300,
+    price5kg: 1500,
+    price10kg: 2800,
     image: alphonso
   },
   {
     id: 2,
     name: "Banganapalli Mango",
-    price5kg: 900,
-    price10kg: 1700,
+    price5kg: 1200,
+    price10kg: 2200,
     image: banganapalli
   },
   {
     id: 3,
     name: "Sindhura Mango",
-    price5kg: 850,
-    price10kg: 1600,
+    price5kg: 1000,
+    price10kg: 1800,
     image: sindhura
   },
   {
     id: 4,
     name: "Mallika Mango",
-    price5kg: 950,
-    price10kg: 1800,
+    price5kg: "1500",
+    price10kg: "2800",
     image: mallika
   },
   {
     id: 5,
     name: "Sugar Beans Mango",
-    price5kg: 1100,
-    price10kg: 2100,
+    price5kg: "price on request",
+    price10kg: "price on request",
     image: sugarbeans
   },
   {
     id: 6,
     name: "Malgova Mango",
-    price5kg: 1000,
-    price10kg: 1900,
+    price5kg: "price on request",
+    price10kg: "price on request",
     image: malgova
   },
   {
     id: 7,
     name: "Raspuri Mango",
-    price5kg: 800,
-    price10kg: 1500,
+    price5kg: "price on request",
+    price10kg: "price on request",
     image: raspuri
   },
   {
     id: 8,
     name: "Kesar Mango",
-    price5kg: 1300,
-    price10kg: 2500,
+    price5kg: "price on request",
+    price10kg: "price on request",
     image: kesar
   },
   {
     id: 9,
     name: "Imampasand Mango",
-    price5kg: 1050,
-    price10kg: 2000,
+    price5kg: 1800,
+    price10kg: 3400,
     image: imampassand
   },
   {
     id: 10,
     name: "Kalapad Mango",
-    price5kg: 920,
-    price10kg: 1750,
+    price5kg: "Price on request",
+    price10kg: "Price on request",
     image: kalapad
   },
   {
     id: 11,
     name: "Daseri Mango",
-    price5kg: 880,
-    price10kg: 1680,
+    price5kg: "Price on request",
+    price10kg: "Price on request",
     image: Daseri
   },
   {
     id: 12,
     name: "Totapuri Mango",
-    price5kg: 780,
-    price10kg: 1450,
+    price5kg: "Price on request",
+    price10kg: "Price on request",
     image: Totapuri
   },
   {
     id: 13,
     name: "Neelam mango",
-    price5kg: 1000,
-    price10kg: 2000,
+    price5kg: " Price on request",
+    price10kg: " Price on request",
     image: Neelam
   }
 ];
@@ -331,11 +331,11 @@ const MangoCarousel = () => {
                       <div className="flex-grow">
                         <div className="mb-3">
                           <p className="text-black text-sm">5 Kg Box</p>
-                          <p className="text-xl font-bold text-orange-700">price on request</p>
+                          <p className="text-xl font-bold text-orange-700">{mango.price5kg}</p>
                         </div>
                         <div className="mb-4">
                           <p className="text-black text-sm">10 Kg Box</p>
-                          <p className="text-xl font-bold text-orange-700">price on request</p>
+                          <p className="text-xl font-bold text-orange-700">{mango.price10kg}</p>
                         </div>
                       </div>
                       <a href='#contact'>

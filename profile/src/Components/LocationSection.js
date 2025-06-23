@@ -50,7 +50,7 @@ const LocationSection = () => {
     },
     {
       id: 3,
-      name: "Yelhanka old town",
+      name: "Yelahanka old town",
       address: "No 10 - 116 Back Side Of MVM Complex , Yelhanka Old Town Bus Stop Bengaluru- 560064",
       plusCode: "6GMJ+93 Bengaluru, Karnataka",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4189.594474873749!2d77.5981864!3d13.0991437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae185716b2e735%3A0x4d5718cd5de42708!2s357%2FA%2C%20Nehru%20Nagar%2C%20Bengaluru%2C%20Karnataka%20560064!5e1!3m2!1sen!2sin!4v1744885758488!5m2!1sen!2sin",

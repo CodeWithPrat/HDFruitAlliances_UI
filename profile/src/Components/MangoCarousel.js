@@ -19,15 +19,15 @@ const mangoes = [
   {
     id: 1,
     name: "Alphonso Mango",
-    price5kg: 1500,
-    price10kg: 2800,
+    price5kg: 1100,
+    price10kg: 2000,
     image: alphonso
   },
   {
     id: 2,
     name: "Banganapalli Mango",
-    price5kg: 1200,
-    price10kg: 2200,
+    price5kg: 700,
+    price10kg: 1500,
     image: banganapalli
   },
   {
@@ -40,7 +40,7 @@ const mangoes = [
   {
     id: 4,
     name: "Mallika Mango",
-    price5kg: "1500",
+    price5kg: "700",
     price10kg: "2800",
     image: mallika
   },
@@ -54,7 +54,7 @@ const mangoes = [
   {
     id: 6,
     name: "Malgova Mango",
-    price5kg: "price on request",
+    price5kg: "1200",
     price10kg: "price on request",
     image: malgova
   },
@@ -103,7 +103,7 @@ const mangoes = [
   {
     id: 13,
     name: "Neelam mango",
-    price5kg: " Price on request",
+    price5kg: "700",
     price10kg: " Price on request",
     image: Neelam
   }
